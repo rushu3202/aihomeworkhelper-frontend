@@ -18,11 +18,11 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ prompt: userMessage })
       });
 
       const data = await response.json();
-      setReply(data.reply);  // Display the response
+      setReply(data.message); // Display the response
     } catch (err) {
       setReply("❌ Error talking to backend!");
       console.error(err);
